@@ -17,6 +17,8 @@ router.param("item", function(req, res, next, slug) {
 
       req.item = item;
 
+      req.item.image = item.image || "/placeholder.png";
+
       return next();
     })
     .catch(next);
